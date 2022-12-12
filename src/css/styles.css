@@ -10,11 +10,89 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  
 }
 
 #search-box {
   font: inherit;
   padding: 8px;
-  max-width: 320px;
+  width: 320px;
   margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+
+.country-list {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  max-width: 320px;
+}
+
+.country_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+
+
+.country-flag {
+  margin-right: 10px;
+}
+
+.country-name {
+  display: block;
+  font-family: inherit;
+  font-size: 20px;
+  margin: 0px;
+}
+
+
+/* style-info */
+.country-info-head {
+  display: flex;
+  align-items: center
+}
+
+.country-info-flag {
+  margin-right: 10px;
+}
+
+.country-info-list {
+
+}
+
+.country-info-list li {
+  display: flex;
+  align-items: center;
+}
+
+.country-info-item {
+margin-right: 10px;
+}
+
+.country-info-value {
+
 }
