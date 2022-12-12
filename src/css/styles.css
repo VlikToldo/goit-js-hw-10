@@ -80,9 +80,6 @@ ol {
   margin-right: 10px;
 }
 
-.country-info-list {
-
-}
 
 .country-info-list li {
   display: flex;
@@ -93,6 +90,3 @@ ol {
 margin-right: 10px;
 }
 
-.country-info-value {
-
-}
