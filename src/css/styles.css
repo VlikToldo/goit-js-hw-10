@@ -53,7 +53,12 @@ ol {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  background-color: lightcyan;
   cursor: pointer;
+}
+
+.country_item:hover {
+  background-color: aquamarine;
 }
 
 
