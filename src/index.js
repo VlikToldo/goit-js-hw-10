@@ -36,7 +36,7 @@ function onSearchBox (e) {
             Notify.info('Too many matches found. Please enter a more specific name.');
             return
 
-        } else if (countries.length >= 2) {
+        } else if (countries.length >= 2 && countries.length < 10) {
 
             clearMarkup();
             countryList(countries);
