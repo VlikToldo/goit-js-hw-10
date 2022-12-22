@@ -6,10 +6,13 @@ export default class CountriesApi {
 
     fetchCountries() {
        return fetch(`https://restcountries.com/v3.1/name/${this.searchName}?fields=name,capital,population,flags,languages`) 
-        .then(resp => resp.json())
-        .then(data => {
-            return data
-        })
+        .then(resp =>{
+            if (!resp.ok) {
+              throw new Error(resp.status);
+              onError();
+        } 
+            return resp.json();
+    })
     }
 
     get name () {

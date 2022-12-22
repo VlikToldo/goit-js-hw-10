@@ -14,7 +14,7 @@ const refs = {
 const countriesApi = new CountriesApi();
 
 refs.input.addEventListener('input', debounce(onSearchBox, DEBOUNCE_DELAY));
-refs.list.addEventListener('click', onItemClick);
+
 
 
 function onSearchBox (e) {
@@ -40,13 +40,11 @@ function onSearchBox (e) {
 
             clearMarkup();
             countryList(countries);
-            return
 
         } else if (countries.length === 1) {
 
             clearMarkup();
             countryInfo(countries);
-            return
         } 
     })
     .catch((onError));
@@ -66,6 +64,8 @@ function onSearchBox (e) {
         .join("");
 
         refs.list.innerHTML = markup;
+
+        refs.list.addEventListener('click', onItemClick);
     }
 
     function countryInfo (countries) {
@@ -99,13 +99,16 @@ function onSearchBox (e) {
     }
 
     function onItemClick (e) {
-        clearMarkup();
+        e.preventDefault();
 
-        countriesApi.name = e.target.textContent;
+        countriesApi.name = e.target.textContent.trim();
 
         countriesApi.fetchCountries()
-    .then(countries => 
-        countryInfo(countries))
+    .then(countries => {
+        clearMarkup();
+        countryInfo(countries);
+        return;
+    }).catch(onError);
     }
 
 
